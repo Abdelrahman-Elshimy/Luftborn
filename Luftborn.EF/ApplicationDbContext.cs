@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Luftborn.core.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Luftborn.Data
+namespace Luftborn.EF
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -12,6 +10,9 @@ namespace Luftborn.Data
             : base(options)
         {
         }
-        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Author> Authors { get; set; }
+
+        public DbSet<Book> Books { get; set; }
     }
 }
